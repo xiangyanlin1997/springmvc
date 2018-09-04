@@ -48,17 +48,4 @@ public class HelloController {
         return map;
     }
 
-    @RequestMapping(value = "sayHi", method = RequestMethod.POST)
-    public String hello(HttpServletRequest request, Model model, @RequestParam("name") String username) {
-        String nameByRequest = request.getParameter("name");
-        model.addAttribute("nameByReuest", nameByRequest);
-        model.addAttribute("username", username);
-        return "result";
-
-    }
-
-    @RequestMapping(value = "/sayHi", method = RequestMethod.GET)
-    public String hello() {
-        return "sayHi";
-    }
 }
